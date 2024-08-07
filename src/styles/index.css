@@ -1,3 +1,197 @@
-/* 
-    General Styles
-*/
+.light-speed-background {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: black;
+    perspective: 1000px;
+}
+
+.stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    overflow: hidden;
+    transform: translateZ(-1000px) scale(2);
+    animation: zoom 2s infinite linear;
+    z-index: -1;
+}
+
+.star {
+    background: rgb(255, 255, 255);
+    position: absolute;
+    animation: travel 10s infinite linear;
+    border-radius: 50%;
+}
+
+@keyframes zoom {
+    0% {
+        transform: translateZ(-1000px) scale(2);
+    }
+
+    100% {
+        transform: translateZ(0px) scale(1);
+    }
+}
+
+@keyframes travel {
+    0% {
+        opacity: 0;
+        transform: translateZ(0px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateZ(1000px);
+    }
+}
+
+.carousel-item .col-2 {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(255, 249, 249, 0.548);
+    background-size: contain;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.logo-container {
+    margin: 0;
+    padding: 0;
+}
+
+
+.logo-left {
+    margin-left: 35px;
+    padding-left: 0;
+    width: 70px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+    margin-top: 0.5rem;
+    background-color: #2c2c2c;
+    border: none;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #fff;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #5a5a5a;
+}
+
+.dropdown-menu .dropdown-item .btn-outline-danger {
+    color: #ff0000;
+}
+
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    width: 100px;
+    height: 100px;
+    background: no-repeat center center;
+    background-size: contain;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px green);
+    }
+
+    to {
+        filter: drop-shadow(0 0 20px green);
+    }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.card-img-container {
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+.horizontal-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.horizontal-scroll-container .d-flex {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 14px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #2c2c2c;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
+    border-radius: 10px;
+    border: 3px solid #2c2c2c;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+.navbar-light .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
